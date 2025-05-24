@@ -1,7 +1,8 @@
 title: "प्रragya Lab"
 description: "Rooted in Indic Wisdom. Advancing Safe, Multilingual AI."
 logo: /assets/img/logo/pragya.png
-url: "https://pragya.github.io"
+url: "https://pragyaai.github.io"
+baseurl: ""
 email: "pragya.ai.research@gmail.com"
 
 markdown: kramdown
