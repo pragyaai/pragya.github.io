@@ -13,5 +13,4 @@ A research group exploring:
 - Safe Alignment in LLMs
 - Multilingual NLP
 - Reasoning and EdTech AI
-- Embodied Robotics
- 
+- Embodied Robotics 
