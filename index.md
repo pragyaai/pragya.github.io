@@ -2,6 +2,7 @@
 layout: home
 title: "प्रragya Lab"
 ---
+
 ![Vision Graphic](/assets/img/vision.png)
 > _"Knowledge is the foundation; wisdom is the summit."_
 
