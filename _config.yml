@@ -6,7 +6,8 @@ baseurl: ""
 email: "pragya.ai.research@gmail.com"
 
 markdown: kramdown
-theme: al-folio
+remote_theme: alshedivat/al-folio
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
