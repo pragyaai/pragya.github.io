@@ -179,6 +179,7 @@ exclude:
   - docker-compose.yml
   - docker-compose-slim.yml
   - FAQ.md
+  - _plugins/external-posts.rb
   - Gemfile
   - Gemfile.lock
   - INSTALL.md
