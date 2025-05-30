@@ -1,7 +1,9 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
 ---
+
 @charset "utf-8";
+
+// Only the main Sass file needs front matter (the dashes are enough)
 
 // Dimensions
 $max-content-width: {{ site.max_width }};
@@ -19,7 +21,7 @@ $max-content-width: {{ site.max_width }};
   "font-awesome/brands",
   "font-awesome/solid",
   "font-awesome/regular",
-  "tabler-icons/tabler-icons",
-  "tabler-icons/tabler-icons-filled",
-  "tabler-icons/tabler-icons-outline"
+  "tabler-icons/tabler-icons.scss",
+  "tabler-icons/tabler-icons-filled.scss",
+  "tabler-icons/tabler-icons-outline.scss"
 ;
