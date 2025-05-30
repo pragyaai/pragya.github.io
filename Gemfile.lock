@@ -236,9 +236,6 @@ GEM
     rexml (3.4.1)
     rouge (4.5.2)
     safe_yaml (1.0.5)
-    sass-embedded (1.89.0)
-      google-protobuf (~> 4.31)
-      rake (>= 13)
     sass-embedded (1.89.0-aarch64-linux-gnu)
       google-protobuf (~> 4.31)
     sass-embedded (1.89.0-aarch64-linux-musl)
@@ -293,7 +290,7 @@ DEPENDENCIES
   css_parser
   feedjira
   httparty
-  jekyll
+  jekyll (~> 4.2)
   jekyll-archives-v2
   jekyll-email-protect
   jekyll-feed

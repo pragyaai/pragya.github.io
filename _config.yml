@@ -211,7 +211,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-tabs
   - jekyll-terser
-  - jekyll-table-of-contents
+  - jekyll-toc
   - jekyll-twitter-plugin
   - jemoji
 
