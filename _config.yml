@@ -7,14 +7,18 @@ email: "pragya.ai.research@gmail.com"
 
 # Build settings
 markdown: kramdown
-# remote_theme: pages-themes/minimal
-remote_theme: alshedivat/al-folio
+remote_theme: alshedivat/al-folio@v0.10.0
 
 # Plugins
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-remote-theme
+  - jekyll-paginate
+
+# Pagination
+paginate: 5
+paginate_path: /blog/page:num/
 
 # Exclude from processing
 exclude:
