@@ -24,9 +24,9 @@ kramdown:
   syntax_highlighter: rouge
 
 # Theme - using a more stable theme initially
-remote_theme: pages-themes/minimal
-# Once CSS issues are resolved, you can switch back to:
-# remote_theme: alshedivat/al-folio@v0.10.0
+# remote_theme: pages-themes/minimal
+# # Once CSS issues are resolved, you can switch back to:
+remote_theme: alshedivat/al-folio@v0.10.0
 
 # Plugins
 plugins:
