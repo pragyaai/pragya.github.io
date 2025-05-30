@@ -1,13 +1,137 @@
+# Site settings
 title: "प्रragya Lab"
 description: "Rooted in Indic Wisdom. Advancing Safe, Multilingual AI."
-logo: /assets/img/logo/pragya.png
-url: "https://pragyaai.github.io"
-baseurl: ""
+author: "Pragya AI Research"
 email: "pragya.ai.research@gmail.com"
 
-markdown: kramdown
-remote_theme: alshedivat/al-folio
+# Site URL configuration
+url: "https://pragyaai.github.io"
+baseurl: ""
 
+# Repository information
+repository: "pragyaai/pragyaai.github.io"
+
+# Logo and branding
+logo: /assets/img/logo/pragya.png
+favicon: /assets/img/logo/pragya.png
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+
+# Theme - using a more stable theme initially
+remote_theme: pages-themes/minimal
+# Once CSS issues are resolved, you can switch back to:
+# remote_theme: alshedivat/al-folio@v0.10.0
+
+# Plugins
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-remote-theme
+
+# SEO settings
+lang: en
+locale: en_US
+
+# Social media and contact
+social:
+  name: "Pragya Lab"
+  links:
+    - "https://github.com/pragyaai"
+
+# Collections (if you plan to use them)
+collections:
+  publications:
+    output: true
+    permalink: /:collection/:name/
+  projects:
+    output: true
+    permalink: /:collection/:name/
+
+# Default layouts for different content types
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Pragya Lab"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "publications"
+    values:
+      layout: "publication"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+
+# Exclude files from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+  - LICENSE
+  - .gitignore
+
+# Include files
+include:
+  - _pages
+
+# Pagination
+paginate: 10
+paginate_path: "/blog/page:num/"
+
+# Archive settings
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: archive-taxonomy
+    tag: archive-taxonomy
+  permalinks:
+    category: /categories/:name/
+    tag: /tags/:name/
+
+# Site verification (add your verification codes when available)
+google_site_verification: ""
+bing_site_verification: ""
+
+# Analytics (add your tracking IDs when needed)
+google_analytics: ""
+
+# Reading time calculation
+reading_time: true
+
+# Table of contents
+toc:
+  min_level: 1
+  max_level: 6
+  ordered_list: false
+  no_toc_section_class: no_toc_section
+  list_id: toc
+  list_class: section-nav
+  sublist_class: ""
+  item_class: toc-entry
+  item_prefix: toc-
+
+# Timezone
+timezone: Asia/Kolkata
