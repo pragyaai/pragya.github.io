@@ -1,12 +1,12 @@
 ---
-title: "Allan Lab - Home"
+title: "प्रragya Lab - Home"
 layout: homelay
-excerpt: "Allan Lab at Leiden University &rarr; LMU."
+excerpt: "प्रragya Lab at BITS Goa, India"
 sitemap: false
 permalink: /
 ---
 
-**News: Our group moved to the University of Munich (LMU)!** Join us! 
+**News: Openings at प्रragya Lab** Join us! 
 
 We are a dynamic research group at [LMU physics](https://www.physik.lmu.de/en/index.html) and at the [Leiden Institute of Physics](http://www.physics.leidenuniv.nl/). 
 
