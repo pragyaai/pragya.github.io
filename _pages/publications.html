@@ -53,7 +53,7 @@ permalink: /publications/
 
 
 <style>
-/* Existing styles from your publications.html */
+/* Existing styles from your publications.html (and updated from index.html) */
 .search-container {
   margin-bottom: 30px;
 }
@@ -80,13 +80,19 @@ permalink: /publications/
   font-weight: 300;
 }
 
+/* === UPDATED PUBLICATION ITEM STYLES START === */
 .publication-item {
+  display: grid; 
+  grid-template-columns: max-content 1fr; 
+  grid-column-gap: 20px; /* Space between tag and start of details area */
+  align-items: start; 
+  
   background-color: #fff;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #e0e0e0; /* Main card border */
+  border-left: none; /* Left border removed from item, moved to title */
   border-radius: 8px;
-  padding: 20px;
+  padding: 20px; /* Overall padding for the item's content */
   margin-bottom: 20px;
-  border-left: 4px solid #007bff;
   transition: box-shadow 0.2s;
 }
 
@@ -95,14 +101,15 @@ permalink: /publications/
 }
 
 .category-tag {
-  display: inline-block;
+  grid-column: 1; 
+  margin-bottom: 0; 
   padding: 4px 8px;
   border-radius: 4px;
   font-size: 12px;
   font-weight: bold;
   text-transform: uppercase;
-  margin-bottom: 10px;
   color: white;
+  align-self: start; /* Ensure tag aligns to the start of its grid cell if content varies */
 }
 
 .category-arxiv { 
@@ -116,6 +123,9 @@ permalink: /publications/
 
 
 .pub-title {
+  grid-column: 2; 
+  border-left: 4px solid #007bff; /* Blue border applied here */
+  padding-left: 16px; /* Padding for text next to the new border */
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 10px;
@@ -124,22 +134,29 @@ permalink: /publications/
 }
 
 .pub-authors {
+  grid-column: 2; 
+  padding-left: 20px; /* Align text with pub-title's text (takes into account title's border+padding) */
   color: #666;
   margin-bottom: 8px;
   line-height: 1.5;
 }
 
 .pub-venue {
+  grid-column: 2; 
+  padding-left: 20px; /* Align text with pub-title's text */
   color: #888;
   font-style: italic;
   margin-bottom: 15px;
 }
 
 .pub-actions {
+  grid-column: 2; 
+  padding-left: 20px; /* Align text with pub-title's text */
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
 }
+/* === UPDATED PUBLICATION ITEM STYLES END === */
 
 .pub-btn {
   padding: 6px 12px;
@@ -258,8 +275,9 @@ permalink: /publications/
     text-align: left;
   }
   
-  .pub-actions {
+  .pub-actions { /* This was already in your template's media query; ensure it remains aligned if needed */
     gap: 8px;
+    /* If grid context padding-left was 20px, it might need adjustment here or ensure it wraps correctly */
   }
   .bibtex-modal-content {
     width: 85%; 
@@ -268,6 +286,10 @@ permalink: /publications/
   #copy-feedback {
     right: 60px; /* Adjust if copy button wraps or moves */
   }
+  /* Note: Specific adjustments for the new grid layout on smaller screens might be needed if wrapping isn't ideal.
+     For example, you might want to make .publication-item display: block again and adjust padding/borders for mobile.
+     However, based on the provided index.html, no specific overrides for the grid itself on mobile were present beyond what's already here.
+  */
 }
 </style>
 
