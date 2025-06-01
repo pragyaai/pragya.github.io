@@ -10,7 +10,6 @@ permalink: /publications/
   <input type="text" class="search-box" id="searchInput" placeholder="Search publications by title, author, venue, or category...">
 </div>
 
-<!-- Publications by Year -->
 <div id="publications-container">
   {% assign years = site.data.publist | group_by: 'year' | sort: 'name' | reverse %}
   
@@ -19,8 +18,8 @@ permalink: /publications/
     <h2 class="year-title">{{ year_group.name }}</h2>
     
     {% for publi in year_group.items %}
-    <div class="publication-item" data-category="{{ publi.categories | join: ' ' }}" data-year="{{ publi.year }}">
-      <div class="category-tag category-{{ publi.venue_tag }}">{{ publi.venue_short }}</div>
+    <div class="publication-item" data-category="{{ publi.categories | join: ' ' | downcase }}" data-year="{{ publi.year }}">
+      <div class="category-tag category-{{ publi.venue_tag | default: 'default' }}">{{ publi.venue_short }}</div>
       <div class="pub-title">{{ publi.title }}</div>
       <div class="pub-authors">{{ publi.authors }}</div>
       <div class="pub-venue">{{ publi.venue }}</div>
@@ -29,7 +28,7 @@ permalink: /publications/
         <a href="{{ publi.paper_url }}" class="pub-btn" target="_blank">Paper</a>
         {% endif %}
         {% if publi.cite_url %}
-        <a href="{{ publi.cite_url }}" class="pub-btn" target="_blank">Cite</a>
+        <a href="javascript:void(0);" class="pub-btn bibtex-cite-button" data-bibtex="{{ publi.cite_url | escape_once }}">Cite</a>
         {% endif %}
         {% if publi.website_url %}
         <a href="{{ publi.website_url }}" class="pub-btn" target="_blank">Website</a>
@@ -45,7 +44,16 @@ permalink: /publications/
   No publications found matching your search criteria.
 </div>
 
+<div id="bibtex-modal" class="bibtex-modal-container">
+  <div class="bibtex-modal-content">
+    <button id="copy-bibtex-button" title="Copy to clipboard">&#x1F4CB;</button> <span id="copy-feedback"></span>
+    <pre id="bibtex-modal-text"></pre>
+  </div>
+</div>
+
+
 <style>
+/* Existing styles from your publications.html */
 .search-container {
   margin-bottom: 30px;
 }
@@ -97,12 +105,15 @@ permalink: /publications/
   color: white;
 }
 
-.category-tallip { background-color: #28a745; }
-.category-icml { background-color: #007bff; }
-.category-neurips { background-color: #fd7e14; }
-.category-acl { background-color: #6f42c1; }
-.category-emnlp { background-color: #dc3545; }
-.category-arxiv { background-color: #6c757d; }
+.category-arxiv { 
+  background-color: #6c757d; /* Gray for arXiv */
+}
+
+.category-default { 
+  background-color: #17a2b8; /* Light blue for everything else */
+}
+/* You might want to add more specific venue_tag styles here, e.g. .category-acl, .category-icml */
+
 
 .pub-title {
   font-size: 18px;
@@ -149,7 +160,7 @@ permalink: /publications/
 }
 
 .hidden {
-  display: none;
+  display: none !important; /* Ensure override if needed */
 }
 
 .no-results {
@@ -162,6 +173,85 @@ permalink: /publications/
   border-radius: 8px;
 }
 
+/* Styles for BibTeX Modal (copied and integrated) */
+.bibtex-modal-container {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.6); /* Black w/ opacity for overlay */
+}
+
+.bibtex-modal-content {
+  background-color: #ffffff; /* White background for the modal box */
+  margin: 10% auto; /* 10% from the top and centered */
+  padding: 25px;
+  padding-top: 50px; /* Make space for copy button at top */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 60%; /* Could be more or less, depending on screen size */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+#copy-bibtex-button {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 18px; 
+  line-height: 1;
+  color: #333;
+  transition: background-color 0.2s;
+}
+
+#copy-bibtex-button:hover {
+  background-color: #e0e0e0;
+}
+
+#copy-bibtex-button:active {
+  background-color: #d0d0d0;
+}
+
+#copy-feedback {
+  position: absolute;
+  top: 20px; 
+  right: 70px; /* To the left of the copy button */
+  font-size: 14px;
+  color: green;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.3s linear;
+}
+
+#copy-feedback.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+#bibtex-modal-text {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #2d2d2d; 
+  color: #f0f0f0; 
+  padding: 15px;
+  border-radius: 5px;
+  white-space: pre-wrap;      
+  word-wrap: break-word;      
+  border: 1px solid #444;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-top: 10px; 
+}
+
+
 @media (max-width: 768px) {
   .year-title {
     font-size: 24px;
@@ -170,6 +260,13 @@ permalink: /publications/
   
   .pub-actions {
     gap: 8px;
+  }
+  .bibtex-modal-content {
+    width: 85%; 
+    margin: 15% auto; /* Adjust margin for smaller screens */
+  }
+  #copy-feedback {
+    right: 60px; /* Adjust if copy button wraps or moves */
   }
 }
 </style>
@@ -180,51 +277,153 @@ function setupSearch() {
   const searchInput = document.getElementById('searchInput');
   const publicationItems = document.querySelectorAll('.publication-item');
   const noResults = document.getElementById('no-results');
+  const yearSections = document.querySelectorAll('.year-section'); // Added for efficiency
 
   searchInput.addEventListener('input', function() {
     const searchTerm = this.value.toLowerCase();
-    let visibleCount = 0;
+    let overallVisibleCount = 0;
 
-    publicationItems.forEach(item => {
-      const title = item.querySelector('.pub-title').textContent.toLowerCase();
-      const authors = item.querySelector('.pub-authors').textContent.toLowerCase();
-      const venue = item.querySelector('.pub-venue').textContent.toLowerCase();
-      const categories = item.dataset.category.toLowerCase();
+    yearSections.forEach(section => {
+        let pubsInSection = section.querySelectorAll('.publication-item');
+        let visibleInSectionCount = 0;
+        pubsInSection.forEach(item => {
+            const title = item.querySelector('.pub-title').textContent.toLowerCase();
+            const authors = item.querySelector('.pub-authors').textContent.toLowerCase();
+            const venue = item.querySelector('.pub-venue').textContent.toLowerCase();
+            // Make category search safer, ensuring dataset.category exists and handling empty strings
+            const categories = item.dataset.category ? item.dataset.category.toLowerCase() : ""; 
 
-      const isVisible = title.includes(searchTerm) || 
-                      authors.includes(searchTerm) || 
-                      venue.includes(searchTerm) ||
-                      categories.includes(searchTerm);
+            const isVisible = title.includes(searchTerm) || 
+                              authors.includes(searchTerm) || 
+                              venue.includes(searchTerm) ||
+                              (categories && categories.includes(searchTerm)); // Check if categories exist
 
-      if (isVisible) {
-        item.classList.remove('hidden');
-        visibleCount++;
-      } else {
-        item.classList.add('hidden');
-      }
+            if (isVisible) {
+                item.classList.remove('hidden');
+                visibleInSectionCount++;
+                overallVisibleCount++;
+            } else {
+                item.classList.add('hidden');
+            }
+        });
+
+        // Show/hide year sections based on visible publications
+        if (visibleInSectionCount === 0 && searchTerm.length > 0) {
+            section.classList.add('hidden');
+        } else { // If search term is cleared or items are visible, show section
+            section.classList.remove('hidden');
+        }
     });
-
-    // Show/hide year sections based on visible publications
-    document.querySelectorAll('.year-section').forEach(section => {
-      const visiblePubs = section.querySelectorAll('.publication-item:not(.hidden)');
-      if (visiblePubs.length === 0) {
-        section.classList.add('hidden');
-      } else {
-        section.classList.remove('hidden');
-      }
-    });
-
+    
     // Show no results message
-    if (visibleCount === 0 && searchTerm.length > 0) {
-      noResults.classList.remove('hidden');
+    if (overallVisibleCount === 0 && searchTerm.length > 0) {
+        noResults.classList.remove('hidden');
     } else {
-      noResults.classList.add('hidden');
+        noResults.classList.add('hidden');
     }
   });
 }
 
 // Initialize
 document.addEventListener('DOMContentLoaded', function() {
-  setupSearch();
+  setupSearch(); // Initialize existing search functionality
+
+  // New BibTeX Modal Functionality (copied and integrated)
+  const modal = document.getElementById('bibtex-modal');
+  const modalText = document.getElementById('bibtex-modal-text');
+  const citeButtons = document.querySelectorAll('.bibtex-cite-button');
+  const copyBibtexButton = document.getElementById('copy-bibtex-button');
+  const copyFeedback = document.getElementById('copy-feedback');
+  
+  const clipboardIcon = '&#x1F4CB;'; // 📋
+  const checkmarkIcon = '&#x2714;'; // ✔️
+
+  if (modal && modalText && copyBibtexButton && copyFeedback) { // Ensure modal elements exist
+    citeButtons.forEach(button => {
+      button.addEventListener('click', function(event) {
+        event.preventDefault(); 
+        const bibtexData = this.getAttribute('data-bibtex');
+        modalText.textContent = bibtexData.trim(); // Set text content and trim any extra whitespace
+        modal.style.display = 'block';
+        copyBibtexButton.innerHTML = clipboardIcon; // Reset icon
+        copyFeedback.classList.remove('visible');
+        copyFeedback.style.color = 'green'; // Reset color
+      });
+    });
+
+    copyBibtexButton.addEventListener('click', function() {
+      const textToCopy = modalText.textContent;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(textToCopy).then(() => {
+          copyBibtexButton.innerHTML = checkmarkIcon;
+          copyFeedback.textContent = 'Copied!';
+          copyFeedback.style.color = 'green';
+          copyFeedback.classList.add('visible');
+          setTimeout(() => {
+            copyBibtexButton.innerHTML = clipboardIcon;
+            copyFeedback.classList.remove('visible');
+          }, 2000);
+        }).catch(err => {
+          console.error('Failed to copy text: ', err);
+          copyFeedback.textContent = 'Failed!';
+          copyFeedback.style.color = 'red';
+          copyFeedback.classList.add('visible');
+           setTimeout(() => {
+            copyFeedback.classList.remove('visible');
+          }, 2000);
+        });
+      } else {
+        // Fallback for older browsers or insecure contexts (e.g. http)
+        console.warn('Clipboard API not available. Using fallback.');
+        try {
+          const textArea = document.createElement("textarea");
+          textArea.value = textToCopy;
+          textArea.style.position = "fixed"; 
+          textArea.style.top = "0";
+          textArea.style.left = "0";
+          textArea.style.opacity = "0"; // Make it invisible
+          document.body.appendChild(textArea);
+          textArea.focus();
+          textArea.select();
+          const successful = document.execCommand('copy');
+          document.body.removeChild(textArea);
+
+          if (successful) {
+            copyBibtexButton.innerHTML = checkmarkIcon;
+            copyFeedback.textContent = 'Copied!';
+            copyFeedback.style.color = 'green';
+            copyFeedback.classList.add('visible');
+          } else {
+            throw new Error('Fallback copy command failed');
+          }
+        } catch (e) {
+           copyFeedback.textContent = 'Failed!';
+           copyFeedback.style.color = 'red';
+           copyFeedback.classList.add('visible');
+           console.error('Fallback copy failed: ', e);
+        }
+        setTimeout(() => {
+            copyBibtexButton.innerHTML = clipboardIcon;
+            copyFeedback.classList.remove('visible');
+          }, 2000);
+      }
+    });
+
+    // Close modal if user clicks outside of the modal content
+    window.addEventListener('click', function(event) {
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    });
+
+    // Close modal with Escape key
+    window.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape' && modal.style.display === 'block') {
+        modal.style.display = 'none';
+      }
+    });
+  } else {
+      console.warn("BibTeX modal elements not found. Citation functionality might be affected.");
+  }
 });
 </script>

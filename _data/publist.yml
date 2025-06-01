@@ -4,20 +4,23 @@
   authors: "Amitava Das, Yaswanth Narsupalli, Gurpreet Singh, Vinija Jain, Vasu Sharma, Suranjana Trivedy, Aman Chadha, Amit Sheth"
   venue: "ACL, 2025"
   venue_short: "ACL"
-  venue_tag: "ACL"
+  venue_tag: "default"
   year: 2025
-  categories: ["tallip", "generation", "nlp"]
   paper_url: "https://arxiv.org/abs/example1"
-  cite_url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=example1"
+  cite_url: "@inproceedings{das2025yinyangalign,
+      title={YINYANG-ALIGN: Benchmarking Contradictory Objectives and Proposing Multi-Objective Optimization based DPO for Text-to-Image Alignment},
+      author={Das, Amitava and Narsupalli, Yaswanth and Singh, Gurpreet and Jain, Vinija and Sharma, Vasu and Trivedy, Suranjana and Chadha, Aman and Sheth, Amit},
+      booktitle={Proceedings of the Association for Computational Linguistics (ACL)},
+      year={2025}
+    }"
   website_url: "https://example-project1.github.io"
 
-- title: "Great Models Think Alike and this Undermines AI Oversight"
+- title: "how do you think"
   authors: "Shashwat Goel, Joschka Struber, Ilze Amanda Auzina, Karuna K Chandra, Ponnurangam Kumaraguru, Douwe Kiela, Ameya Prabhu, Matthias Bethge, and Jonas Geiping"
   venue: "Forty Second International Conference on Machine Learning, 2025"
-  venue_short: "ICML"
-  venue_tag: "icml"
+  venue_short: "arXiv"
+  venue_tag: "arxiv"
   year: 2025
-  categories: ["icml", "multimodal"]
   paper_url: "https://arxiv.org/abs/example2"
   cite_url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=example2"
   website_url: "https://example-project2.github.io"
@@ -26,9 +29,8 @@
   authors: "Varshita Kolipaka, Akshit Sinha, Debangan Misha, Sumit Kumar, Arvindh Arun, Shashwat Goel, and Ponnurangam Kumaraguru"
   venue: "Forty Second International Conference on Machine Learning, 2025"
   venue_short: "ICML"
-  venue_tag: "icml"
+  venue_tag: "default"
   year: 2025
-  categories: ["icml", "efficiency"]
   paper_url: "https://arxiv.org/abs/example3"
   cite_url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=example3"
   website_url: "https://example-project3.github.io"
@@ -38,8 +40,7 @@
   venue: "Advances in Neural Information Processing Systems, 2024"
   venue_short: "NeurIPS"
   venue_tag: "neurips"
-  year: 2024
-  categories: ["neurips", "explainability"]
+  year: 2023
   paper_url: "https://arxiv.org/abs/example4"
   cite_url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=example4"
   website_url: "https://example-project4.github.io"
@@ -49,8 +50,7 @@
   venue: "Association for Computational Linguistics, 2024"
   venue_short: "ACL"
   venue_tag: "acl"
-  year: 2024
-  categories: ["acl", "qa", "nlp"]
+  year: 2023
   paper_url: "https://arxiv.org/abs/example5"
   cite_url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=example5"
   website_url: "https://example-project5.github.io"
