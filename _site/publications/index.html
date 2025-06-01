@@ -1,274 +1,387 @@
 <!DOCTYPE html>
 <html>
 
-<head>
+  <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>प्रragya Lab - Publications</title>
   <meta name="description" content="प्रragya Lab -- Publications.">
-  <link rel="stylesheet" href="http://localhost:4000/css/main.css">
-  <link rel="canonical" href="http://localhost:4000/publications/">
-  
-  <style>
-    .search-container {
-      margin-bottom: 30px;
-    }
-    
-    .search-box {
-      width: 100%;
-      max-width: 500px;
-      padding: 12px 20px;
-      font-size: 16px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      background-color: #fff;
-    }
-    
-    .year-section {
-      margin-bottom: 40px;
-    }
-    
-    .year-title {
-      font-size: 28px;
-      color: #666;
-      text-align: right;
-      margin-bottom: 20px;
-      font-weight: 300;
-    }
-    
-    .publication-item {
-      background-color: #fff;
-      border: 1px solid #e0e0e0;
-      border-radius: 8px;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-left: 4px solid #007bff;
-      transition: box-shadow 0.2s;
-    }
-    
-    .publication-item:hover {
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    
-    .category-tag {
-      display: inline-block;
-      padding: 4px 8px;
-      border-radius: 4px;
-      font-size: 12px;
-      font-weight: bold;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-      color: white;
-    }
-    
-    .category-tallip { background-color: #28a745; }
-    .category-icml { background-color: #007bff; }
-    .category-neurips { background-color: #fd7e14; }
-    .category-acl { background-color: #6f42c1; }
-    .category-emnlp { background-color: #dc3545; }
-    .category-arxiv { background-color: #6c757d; }
-    
-    .pub-title {
-      font-size: 18px;
-      font-weight: 600;
-      margin-bottom: 10px;
-      line-height: 1.4;
-      color: #333;
-    }
-    
-    .pub-authors {
-      color: #666;
-      margin-bottom: 8px;
-      line-height: 1.5;
-    }
-    
-    .pub-venue {
-      color: #888;
-      font-style: italic;
-      margin-bottom: 15px;
-    }
-    
-    .pub-actions {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    
-    .pub-btn {
-      padding: 6px 12px;
-      border: 1px solid #007bff;
-      border-radius: 4px;
-      text-decoration: none;
-      color: #007bff;
-      font-size: 12px;
-      text-transform: uppercase;
-      font-weight: 500;
-      transition: all 0.3s;
-    }
-    
-    .pub-btn:hover {
-      background-color: #007bff;
-      color: white;
-      text-decoration: none;
-    }
-    
-    .hidden {
-      display: none;
-    }
-    
-    .no-results {
-      text-align: center;
-      color: #888;
-      font-size: 18px;
-      margin: 40px 0;
-      padding: 40px;
-      background-color: #f8f9fa;
-      border-radius: 8px;
-    }
-    
-    @media (max-width: 768px) {
-      .year-title {
-        font-size: 24px;
-        text-align: left;
-      }
-      
-      .pub-actions {
-        gap: 8px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="/publications/">
+
+
+
 </head>
 
-<body>
 
-  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      
-        <a class="navbar-brand" href="http://localhost:4000/">प्रragya Lab at BITS Goa, India</a>
-      </div>
-      <div class="collapse navbar-collapse" id="navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="http://localhost:4000/">Home</a></li>
-          <li><a href="http://localhost:4000/team">Team</a></li>
-          <li><a href="http://localhost:4000/vacancies">Vacancies</a></li>
-          <li><a href="http://localhost:4000/publications">Publications</a></li>
-          <li><a href="http://localhost:4000/research">Research</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
+  <body>
 
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container-fluid">
-    <div class="row">
-      <div id="gridid" class="col-sm-12">
-        <h1 id="publications">Publications</h1>
-        
+	<div class="navbar-header">
+	  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+		<span class="sr-only">Toggle navigation</span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+	  </button>
+	
+    <a class="navbar-brand" href="/">प्रragya Lab at BITS Goa, India</a>
+	</div>
+	<div class="collapse navbar-collapse" id="navbar-collapse-1">
+	  <ul class="nav navbar-nav navbar-right">
+		<li><a href="/">Home</a></li>
+		<li><a href="/team">Team</a></li>
+		<li><a href="/vacancies">Vacancies</a></li>
+		<li><a href="/publications">Publications</a></li>
+		<li><a href="/research">Research</a></li>
+	<!-- li><a href="/pictures">(Pics)</a></li> -->	<
+	  </ul>
+	</div>
+  </div>
+</div>
+
+
+    <div class="container-fluid">
+      <div class="row">
         <div class="search-container">
-          <input type="text" class="search-box" id="searchInput" placeholder="Search publications by title, author or venue...">
-        </div>
+  <p><input type="text" class="search-box" id="searchInput" placeholder="Search publications by title, author, venue, or category..." /></p>
+</div>
 
-        <!-- Publications by Year -->
-        <div id="publications-container">
-          {% assign years = site.data.publist | group_by: 'year' | sort: 'name' | reverse %}
-          
-          {% for year_group in years %}
-          <div class="year-section">
-            <h2 class="year-title">{{ year_group.name }}</h2>
-            
-            {% for publi in year_group.items %}
-            <div class="publication-item" data-category="{{ publi.categories | join: ' ' }}" data-year="{{ publi.year }}">
-              <div class="category-tag category-{{ publi.venue_tag | downcase }}">{{ publi.venue_short }}</div>
-              <div class="pub-title">{{ publi.title }}</div>
-              <div class="pub-authors">{{ publi.authors }}</div>
-              <div class="pub-venue">{{ publi.venue }}</div>
-              <div class="pub-actions">
-                {% if publi.paper_url %}
-                <a href="{{ publi.paper_url }}" class="pub-btn" target="_blank">Paper</a>
-                {% endif %}
-                {% if publi.cite_url %}
-                <a href="{{ publi.cite_url }}" class="pub-btn" target="_blank">Cite</a>
-                {% endif %}
-                {% if publi.website_url %}
-                <a href="{{ publi.website_url }}" class="pub-btn" target="_blank">Website</a>
-                {% endif %}
-              </div>
-            </div>
-            {% endfor %}
-          </div>
-          {% endfor %}
-        </div>
+<!-- Publications by Year -->
+<div id="publications-container">
 
-        <div id="no-results" class="no-results hidden">
-          No publications found matching your search criteria.
-        </div>
-      </div>
-    </div>
+  <div class="year-section">
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;h2 class="year-title"&gt;2025&lt;/h2&gt;
+
+
+&lt;div class="publication-item" data-category="tallip generation nlp" data-year="2025"&gt;
+  &lt;div class="category-tag category-ACL"&gt;ACL&lt;/div&gt;
+  &lt;div class="pub-title"&gt;YINYANG-ALIGN: Benchmarking Contradictory Objectives and Proposing Multi-Objective Optimization based DPO for Text-to-Image Alignment&lt;/div&gt;
+  &lt;div class="pub-authors"&gt;Amitava Das, Yaswanth Narsupalli, Gurpreet Singh, Vinija Jain, Vasu Sharma, Suranjana Trivedy, Aman Chadha, Amit Sheth&lt;/div&gt;
+  &lt;div class="pub-venue"&gt;ACL, 2025&lt;/div&gt;
+  &lt;div class="pub-actions"&gt;
+    
+    &lt;a href="https://arxiv.org/abs/example1" class="pub-btn" target="_blank"&gt;Paper&lt;/a&gt;
+    
+    
+    &lt;a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=example1" class="pub-btn" target="_blank"&gt;Cite&lt;/a&gt;
+    
+    
+    &lt;a href="https://example-project1.github.io" class="pub-btn" target="_blank"&gt;Website&lt;/a&gt;
+    
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="publication-item" data-category="icml multimodal" data-year="2025"&gt;
+  &lt;div class="category-tag category-icml"&gt;ICML&lt;/div&gt;
+  &lt;div class="pub-title"&gt;Great Models Think Alike and this Undermines AI Oversight&lt;/div&gt;
+  &lt;div class="pub-authors"&gt;Shashwat Goel, Joschka Struber, Ilze Amanda Auzina, Karuna K Chandra, Ponnurangam Kumaraguru, Douwe Kiela, Ameya Prabhu, Matthias Bethge, and Jonas Geiping&lt;/div&gt;
+  &lt;div class="pub-venue"&gt;Forty Second International Conference on Machine Learning, 2025&lt;/div&gt;
+  &lt;div class="pub-actions"&gt;
+    
+    &lt;a href="https://arxiv.org/abs/example2" class="pub-btn" target="_blank"&gt;Paper&lt;/a&gt;
+    
+    
+    &lt;a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=example2" class="pub-btn" target="_blank"&gt;Cite&lt;/a&gt;
+    
+    
+    &lt;a href="https://example-project2.github.io" class="pub-btn" target="_blank"&gt;Website&lt;/a&gt;
+    
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="publication-item" data-category="icml efficiency" data-year="2025"&gt;
+  &lt;div class="category-tag category-icml"&gt;ICML&lt;/div&gt;
+  &lt;div class="pub-title"&gt;A Cognac shot to forget bad memories: Corrective Unlearning in GNNs&lt;/div&gt;
+  &lt;div class="pub-authors"&gt;Varshita Kolipaka, Akshit Sinha, Debangan Misha, Sumit Kumar, Arvindh Arun, Shashwat Goel, and Ponnurangam Kumaraguru&lt;/div&gt;
+  &lt;div class="pub-venue"&gt;Forty Second International Conference on Machine Learning, 2025&lt;/div&gt;
+  &lt;div class="pub-actions"&gt;
+    
+    &lt;a href="https://arxiv.org/abs/example3" class="pub-btn" target="_blank"&gt;Paper&lt;/a&gt;
+    
+    
+    &lt;a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=example3" class="pub-btn" target="_blank"&gt;Cite&lt;/a&gt;
+    
+    
+    &lt;a href="https://example-project3.github.io" class="pub-btn" target="_blank"&gt;Website&lt;/a&gt;
+    
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre></div>    </div>
+
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <script>
-    // Search functionality
-    function setupSearch() {
-      const searchInput = document.getElementById('searchInput');
-      const publicationItems = document.querySelectorAll('.publication-item');
-      const noResults = document.getElementById('no-results');
+  <div class="year-section">
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;h2 class="year-title"&gt;2024&lt;/h2&gt;
 
-      searchInput.addEventListener('input', function() {
-        const searchTerm = this.value.toLowerCase();
-        let visibleCount = 0;
 
-        publicationItems.forEach(item => {
-          const title = item.querySelector('.pub-title').textContent.toLowerCase();
-          const authors = item.querySelector('.pub-authors').textContent.toLowerCase();
-          const venue = item.querySelector('.pub-venue').textContent.toLowerCase();
-          const categories = item.dataset.category.toLowerCase();
+&lt;div class="publication-item" data-category="neurips explainability" data-year="2024"&gt;
+  &lt;div class="category-tag category-neurips"&gt;NeurIPS&lt;/div&gt;
+  &lt;div class="pub-title"&gt;Understanding Neural Network Interpretability through Gradient-Based Methods&lt;/div&gt;
+  &lt;div class="pub-authors"&gt;Sample Author, Another Author, Third Author&lt;/div&gt;
+  &lt;div class="pub-venue"&gt;Advances in Neural Information Processing Systems, 2024&lt;/div&gt;
+  &lt;div class="pub-actions"&gt;
+    
+    &lt;a href="https://arxiv.org/abs/example4" class="pub-btn" target="_blank"&gt;Paper&lt;/a&gt;
+    
+    
+    &lt;a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=example4" class="pub-btn" target="_blank"&gt;Cite&lt;/a&gt;
+    
+    
+    &lt;a href="https://example-project4.github.io" class="pub-btn" target="_blank"&gt;Website&lt;/a&gt;
+    
+  &lt;/div&gt;
+&lt;/div&gt;
 
-          const isVisible = title.includes(searchTerm) || 
-                          authors.includes(searchTerm) || 
-                          venue.includes(searchTerm) ||
-                          categories.includes(searchTerm);
+&lt;div class="publication-item" data-category="acl qa nlp" data-year="2024"&gt;
+  &lt;div class="category-tag category-acl"&gt;ACL&lt;/div&gt;
+  &lt;div class="pub-title"&gt;Question Answering in Low-Resource Languages: A Comprehensive Study&lt;/div&gt;
+  &lt;div class="pub-authors"&gt;Research Author, Co-Author, Final Author&lt;/div&gt;
+  &lt;div class="pub-venue"&gt;Association for Computational Linguistics, 2024&lt;/div&gt;
+  &lt;div class="pub-actions"&gt;
+    
+    &lt;a href="https://arxiv.org/abs/example5" class="pub-btn" target="_blank"&gt;Paper&lt;/a&gt;
+    
+    
+    &lt;a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=example5" class="pub-btn" target="_blank"&gt;Cite&lt;/a&gt;
+    
+    
+    &lt;a href="https://example-project5.github.io" class="pub-btn" target="_blank"&gt;Website&lt;/a&gt;
+    
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre></div>    </div>
 
-          if (isVisible) {
-            item.classList.remove('hidden');
-            visibleCount++;
-          } else {
-            item.classList.add('hidden');
-          }
-        });
+  </div>
 
-        // Show/hide year sections based on visible publications
-        document.querySelectorAll('.year-section').forEach(section => {
-          const visiblePubs = section.querySelectorAll('.publication-item:not(.hidden)');
-          if (visiblePubs.length === 0) {
-            section.classList.add('hidden');
-          } else {
-            section.classList.remove('hidden');
-          }
-        });
+</div>
 
-        // Show no results message
-        if (visibleCount === 0 && searchTerm.length > 0) {
-          noResults.classList.remove('hidden');
-        } else {
-          noResults.classList.add('hidden');
-        }
-      });
-    }
+<div id="no-results" class="no-results hidden">
+  <p>No publications found matching your search criteria.</p>
+</div>
 
-    // Initialize
-    document.addEventListener('DOMContentLoaded', function() {
-      setupSearch();
+<style>
+.search-container {
+  margin-bottom: 30px;
+}
+
+.search-box {
+  width: 100%;
+  max-width: 500px;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.year-section {
+  margin-bottom: 40px;
+}
+
+.year-title {
+  font-size: 28px;
+  color: #666;
+  text-align: right;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+
+.publication-item {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-left: 4px solid #007bff;
+  transition: box-shadow 0.2s;
+}
+
+.publication-item:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.category-tag {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.category-tallip { background-color: #28a745; }
+.category-icml { background-color: #007bff; }
+.category-neurips { background-color: #fd7e14; }
+.category-acl { background-color: #6f42c1; }
+.category-emnlp { background-color: #dc3545; }
+.category-arxiv { background-color: #6c757d; }
+
+.pub-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  line-height: 1.4;
+  color: #333;
+}
+
+.pub-authors {
+  color: #666;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.pub-venue {
+  color: #888;
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+.pub-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.pub-btn {
+  padding: 6px 12px;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #007bff;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.pub-btn:hover {
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.no-results {
+  text-align: center;
+  color: #888;
+  font-size: 18px;
+  margin: 40px 0;
+  padding: 40px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .year-title {
+    font-size: 24px;
+    text-align: left;
+  }
+  
+  .pub-actions {
+    gap: 8px;
+  }
+}
+</style>
+
+<script>
+// Search functionality
+function setupSearch() {
+  const searchInput = document.getElementById('searchInput');
+  const publicationItems = document.querySelectorAll('.publication-item');
+  const noResults = document.getElementById('no-results');
+
+  searchInput.addEventListener('input', function() {
+    const searchTerm = this.value.toLowerCase();
+    let visibleCount = 0;
+
+    publicationItems.forEach(item => {
+      const title = item.querySelector('.pub-title').textContent.toLowerCase();
+      const authors = item.querySelector('.pub-authors').textContent.toLowerCase();
+      const venue = item.querySelector('.pub-venue').textContent.toLowerCase();
+      const categories = item.dataset.category.toLowerCase();
+
+      const isVisible = title.includes(searchTerm) || 
+                      authors.includes(searchTerm) || 
+                      venue.includes(searchTerm) ||
+                      categories.includes(searchTerm);
+
+      if (isVisible) {
+        item.classList.remove('hidden');
+        visibleCount++;
+      } else {
+        item.classList.add('hidden');
+      }
     });
-  </script>
 
-</body>
+    // Show/hide year sections based on visible publications
+    document.querySelectorAll('.year-section').forEach(section => {
+      const visiblePubs = section.querySelectorAll('.publication-item:not(.hidden)');
+      if (visiblePubs.length === 0) {
+        section.classList.add('hidden');
+      } else {
+        section.classList.remove('hidden');
+      }
+    });
+
+    // Show no results message
+    if (visibleCount === 0 && searchTerm.length > 0) {
+      noResults.classList.remove('hidden');
+    } else {
+      noResults.classList.add('hidden');
+    }
+  });
+}
+
+// Initialize
+document.addEventListener('DOMContentLoaded', function() {
+  setupSearch();
+});
+</script>
+
+
+      </div>
+    </div>
+
+    <div id="footer" class="panel">
+  <div class="panel-footer">
+	<div class="container-fluid">
+	  <div class="row">
+		<div class="col-sm-4">
+
+		  <p>&copy 2025 प्रragya Lab. Site made with <a href="https://jekyllrb.com">Jekyll</a>;</a></p>
+              
+
+
+		   <p>  </p><p>
+
+
+		</div>
+		<div class="col-sm-4">
+		<p>We are part of the <a href="https://www.physik.lmu.de/en//">Faculty of Physics</a> at the<a href="https://www.lmu.de"> University of Munich (LMU)</a>. We are still associated with the <a href="https://www.physics.leidenuniv.nl/">Leiden Institute of Physics</a>, where most of our instrument are.</p>
+		</div>
+		<div class="col-sm-4">
+		  Contact:<br />
+Geschwister-Scholl-Platz 1<br />
+		  80539 München<br />
+		  Germany <br />
+		</div>
+	  </div>
+	</div>
+  </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+
+
+  </body>
+
 </html>
