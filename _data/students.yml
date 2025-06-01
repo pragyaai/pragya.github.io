@@ -1,11 +1,21 @@
-#- name:
-#  photo: rock.jpg
-#  info:
-#  email:
-#  number_educ:
-#  education1:
-#  education2:
-#  education3:
-#  education4:
+- name: "Abhilekh Borah"
+  photo: "abhilekh.jpeg"  # Make sure 'anya_sharma.jpg' is in your /images/teampic/ folder
+  info: "B.Tech. in CSE, Manipal University Jaipur"
+  email: "abhilekhkey@gmail.com"
+  # number_educ: 2
+  # education1: "M.Sc. in Physics, University of Excellence"
+  # education2: "B.Sc. in Applied Physics, Tech Institute"
+  # education3:
+  # education4:
+
+# - name: "Rohan Das"
+#   photo: "rohan_das.png"    # Make sure 'rohan_das.png' is in your /images/teampic/ folder
+#   info: "Master's Student, NLP and Machine Learning"
+#   email: "rohan.d@example.com" # Note: Email is in YML but commented out in the team page display template
+#   number_educ: 1
+#   education1: "B.Tech. in Computer Science, National College"
+#   # education2:
+#   # education3:
+#   # education4:
 
 
