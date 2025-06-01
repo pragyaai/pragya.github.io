@@ -110,7 +110,7 @@ Jump to [mentors](#staff), [collaborators](#alumni), [fellows](#master-and-bache
 {% endif %}
 
 
-## Fellows
+## Students
 {% assign number_printed = 0 %}
 {% for member in site.data.students %}
 
@@ -163,7 +163,7 @@ Jump to [mentors](#staff), [collaborators](#alumni), [fellows](#master-and-bache
 </div>
 {% endif %}
 
-## Students
+<!-- ## Students
 <div class="row">
 
 <div class="col-sm-4 clearfix">
@@ -188,7 +188,7 @@ Jump to [mentors](#staff), [collaborators](#alumni), [fellows](#master-and-bache
 </div>
 
 </div>
+ -->
 
-
-## Administrative Support
-<a href="mailto:Rijsewijk@Physics.LeidenUniv.nl">Ellie van Rijsewijk</a> is helping us (and other groups) with administration.
+<!-- ## Administrative Support
+<a href="mailto:Rijsewijk@Physics.LeidenUniv.nl">Ellie van Rijsewijk</a> is helping us (and other groups) with administration. -->
