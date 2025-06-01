@@ -18,7 +18,7 @@
 - title: "how do you think"
   authors: "Shashwat Goel, Joschka Struber, Ilze Amanda Auzina, Karuna K Chandra, Ponnurangam Kumaraguru, Douwe Kiela, Ameya Prabhu, Matthias Bethge, and Jonas Geiping"
   venue: "Forty Second International Conference on Machine Learning, 2025"
-  venue_short: "arXiv"
+  venue_short: "Preprint"
   venue_tag: "arxiv"
   year: 2025
   paper_url: "https://arxiv.org/abs/example2"
@@ -39,7 +39,7 @@
   authors: "Sample Author, Another Author, Third Author"
   venue: "Advances in Neural Information Processing Systems, 2024"
   venue_short: "NeurIPS"
-  venue_tag: "neurips"
+  venue_tag: "default"
   year: 2023
   paper_url: "https://arxiv.org/abs/example4"
   cite_url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=example4"
@@ -49,7 +49,7 @@
   authors: "Research Author, Co-Author, Final Author"
   venue: "Association for Computational Linguistics, 2024"
   venue_short: "ACL"
-  venue_tag: "acl"
+  venue_tag: "default"
   year: 2023
   paper_url: "https://arxiv.org/abs/example5"
   cite_url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=example5"
