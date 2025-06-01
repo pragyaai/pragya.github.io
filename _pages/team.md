@@ -76,7 +76,7 @@ Jump to [mentors](#staff), [collaborators](#alumni), [fellows](#master-and-bache
 {% endif %}
 
 
-## Collaborators
+## Fellows, Mentors, Collaborators
 
 {% assign number_printed = 0 %}
 {% for member in site.data.alumni_members %}
